@@ -1,5 +1,8 @@
 class JoboffersController < ApplicationController
   before_action :set_joboffer, only: %i[ show edit update destroy ]
+  before_action only: [:new, :create] do
+    authorize_request(["admin"])
+  end
 
   # GET /joboffers or /joboffers.json
   def index
