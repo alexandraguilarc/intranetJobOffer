@@ -5,7 +5,7 @@ class CreateJoboffers < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :departament
       t.datetime :when_went
-      t.references :user, null: false, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

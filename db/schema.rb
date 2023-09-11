@@ -10,9 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_11_185851) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_11_191953) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: :cascade do |t|
+    t.text "url"
+    t.string "context"
+    t.string "imageable_type"
+    t.bigint "imageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable"
+  end
+
+  create_table "joboffers", force: :cascade do |t|
+    t.string "position"
+    t.string "description"
+    t.string "departament"
+    t.datetime "when_went"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_joboffers_on_user_id"
+  end
+
+  create_table "postulations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "joboffer_id"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["joboffer_id"], name: "index_postulations_on_joboffer_id"
+    t.index ["user_id"], name: "index_postulations_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_185851) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "joboffers", "users"
+  add_foreign_key "postulations", "joboffers"
+  add_foreign_key "postulations", "users"
 end
