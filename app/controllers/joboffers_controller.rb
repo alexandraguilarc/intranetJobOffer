@@ -4,6 +4,10 @@ class JoboffersController < ApplicationController
     authorize_request(["admin"])
   end
 
+  before_action only: [:edit, :update, :destroy] do
+    authorize_request(["admin"])
+  end
+
   # GET /joboffers or /joboffers.json
   def index
     @joboffers = Joboffer.all
