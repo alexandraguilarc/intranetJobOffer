@@ -76,3 +76,6 @@ gem 'activestorage'
 gem "figaro"
 gem "aws-sdk-s3"
 gem "faker"
+gem 'ransack'
+gem 'devise-i18n'
+gem 'annotate'

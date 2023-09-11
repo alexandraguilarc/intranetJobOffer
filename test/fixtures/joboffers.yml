@@ -1,4 +1,16 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: joboffers
+#
+#  id          :bigint           not null, primary key
+#  position    :string
+#  description :string
+#  departament :string
+#  when_went   :datetime
+#  user_id     :bigint
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 
 one:
   position: MyString

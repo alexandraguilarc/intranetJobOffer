@@ -68,6 +68,9 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     aws-eventstream (1.2.0)
     aws-partitions (1.820.0)
     aws-sdk-core (3.181.0)
@@ -110,6 +113,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.11.0)
+      devise (>= 4.9.0)
     erubi (1.12.0)
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
@@ -196,6 +201,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    ransack (4.0.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.5.0)
       psych (>= 4.0.0)
     regexp_parser (2.8.1)
@@ -248,11 +257,13 @@ PLATFORMS
 
 DEPENDENCIES
   activestorage
+  annotate
   aws-sdk-s3
   bootsnap
   capybara
   debug
   devise
+  devise-i18n
   faker
   figaro
   importmap-rails
@@ -260,6 +271,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.8)
+  ransack
   selenium-webdriver
   sprockets-rails
   stimulus-rails
