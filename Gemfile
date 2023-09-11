@@ -75,3 +75,4 @@ gem 'devise'
 gem 'activestorage'
 gem "figaro"
 gem "aws-sdk-s3"
+gem "faker"
