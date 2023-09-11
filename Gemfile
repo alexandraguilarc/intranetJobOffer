@@ -74,3 +74,4 @@ end
 gem 'devise'
 gem 'activestorage'
 gem "figaro"
+gem "aws-sdk-s3"
