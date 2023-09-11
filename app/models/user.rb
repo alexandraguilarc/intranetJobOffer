@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :joboffers
   has_many :positions
   has_many_attached :images
+
+  enum :role, [:normal_user, :admin]
 end
