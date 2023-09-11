@@ -22,8 +22,13 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true, class: 'form-control' %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autocomplete: "name", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true, class: 'form-control' %>
   </div>
 
   <div class="actions">
