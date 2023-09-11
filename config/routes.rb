@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :joboffers
+  resources :postulations, only: [:create]
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
