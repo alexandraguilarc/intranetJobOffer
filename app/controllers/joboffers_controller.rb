@@ -15,6 +15,8 @@ class JoboffersController < ApplicationController
 
   # GET /joboffers/1 or /joboffers/1.json
   def show
+    @postulation = Postulation.new
+    # @postulations = @joboffer.postulations
   end
 
   # GET /joboffers/new
